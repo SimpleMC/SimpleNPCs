@@ -1,1 +1,2 @@
-someconfig: true
+# Timeout between binding command and NPC interaction
+bindtimeout: PT10S # Accepts ISO-8601 duration format PnDTnHnMn.nS

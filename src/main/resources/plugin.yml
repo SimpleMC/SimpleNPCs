@@ -1,6 +1,53 @@
-name: KotlinPluginTemplate
-main: org.simplemc.plugintemplate.KotlinPluginTemplate
+name: SimpleNPCs
+main: org.simplemc.simplenpcs.SimpleNPCs
 version: 0.1.0
 api-version: "1.15"
-website: https://github.com/SimpleMC/mc-kotlin-plugin-template
+website: https://github.com/SimpleMC/SimpleNPCs
 author: tajobe
+permissions:
+  simplenpc.*:
+    description: Wildcard permission
+    children:
+      simplenpc.bind: true
+      simplenpc.unbind: true
+      simplenpc.interact: true
+  simplenpc.bind:
+    description: Allow binding (creating) NPCs
+    default: op
+  simplenpc.unbind:
+    description: Allow unbinding (deleting) NPCs
+    default: op
+  simplenpc.interact:
+    description: Allow interacting with NPCs
+commands:
+  bindnpc:
+    description: Bind a command to the next entity you interact with
+    aliases:
+      - bindcommand
+      - bnpc
+      - bcmd
+      - npc
+      - createnpc
+    permission: simplenpc.bind
+    usage: |
+      /<command> <commandname> [args] | Bind given command to the next entity you interact with
+  unbindnpc:
+    description: Unbind a command to the next entity you interact with
+    aliases:
+      - unbindcommand
+      - ubnpc
+      - ubcmd
+      - unpc
+      - deletenpc
+      - removenpc
+    permission: simplenpc.unbind
+    usage: |
+      /<command> <commandname> [args] | Bind given command to the next entity you interact with
+  cancelnpc:
+    description: Force cancel an awaiting NPC bind/unbind
+    aliases:
+      - cancelbindcommand
+      - cancelbind
+    permission: simplenpc.bind
+    usage: |
+      /<command> | Cancel your awaiting bind/unbind

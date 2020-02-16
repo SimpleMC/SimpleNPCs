@@ -32,5 +32,5 @@ jobs:
           ALLOW_TAG_PREFIX: "true"
         with:
           args: |
-            build/libs/mc-kotlin-plugin-template-${{ steps.format-version.outputs.replaced }}.jar
-            build/libs/mc-kotlin-plugin-template-${{ steps.format-version.outputs.replaced }}-nokt.jar
+            build/libs/simplenpcs-${{ steps.format-version.outputs.replaced }}.jar
+            build/libs/simplenpcs-${{ steps.format-version.outputs.replaced }}-nokt.jar
