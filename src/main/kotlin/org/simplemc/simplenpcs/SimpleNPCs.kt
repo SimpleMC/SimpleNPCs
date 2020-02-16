@@ -73,7 +73,6 @@ class SimpleNPCs : JavaPlugin(), Listener {
     private fun npcInteract(event: PlayerInteractEntityEvent) {
         val entity = event.rightClicked
         val player = event.player
-        logger.info("interact")
 
         // only fire once per interaction, so pick a hand
         if (event.hand == EquipmentSlot.HAND) {
@@ -83,11 +82,9 @@ class SimpleNPCs : JavaPlugin(), Listener {
                     timeout.cancel()
                     event.isCancelled = true
                     command?.let {
-                        logger.info("bind")
                         bind(entity, command)
                         player.sendMessage("NPC ${entity.name} bound command `$command`!")
                     } ?: let {
-                        logger.info("unbind")
                         unbind(entity)
                         player.sendMessage("NPC ${entity.name} bind removed!")
                     }
@@ -95,7 +92,6 @@ class SimpleNPCs : JavaPlugin(), Listener {
                 // otherwise, perform NPC action (if applicable)
                 ?: entity.getBind()?.let { command ->
                     if (player.hasPermission("simplenpc.interact")) {
-                        logger.info("npc")
                         player.performCommand(command)
                         event.isCancelled = true
                     }
