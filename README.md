@@ -1,11 +1,34 @@
-# mc-kotlin-plugin-template
-Opinionated template/starter for creating Minecraft plugins in Kotlin using the Spigot API
+# SimpleNPCs
+Simple "NPC" interaction plugin for binding commands to entities
 
 ## Features
 
-- Gradle axion-release-plugin for managing semver
-  - automatic updating of `CHANGELOG.md` and `main/resources/plugin.yml` when a release is made
-- Github Actions to build PRs and automatically create Github releases when a release tag is pushed
-- [`ktlint`](https://github.com/JLLeitschuh/ktlint-gradle) Gradle plugin
-- Gradle build generates a shadowed jar which includes kotlin stdlib and a `nokt` jar without
-  - Users with the stdlib already on the classpath can use the smaller jar
+- Simple, composable entity interactions via command binding
+
+## Config Overview
+```yaml
+# Timeout between binding command and NPC interaction
+bindtimeout: PT10S # Accepts ISO-8601 duration format PnDTnHnMn.nS
+```
+
+For more information on the format, see [`java.time.Duration#parse`](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-)
+
+## Commands
+
+- `/bindnpc <command> [args...]`
+  - Bind the given command and args to the next entity you interact with (right click)
+- `/unbindnpc`
+  - Unbind a command to the next entity you interact with
+- `/cancelnpc`
+  - Force cancel an awaiting NPC bind/unbind (don't bind or unbind on your next entity interaction)
+
+## Permissions
+
+- `simplenpc.*`
+  - "Wildcard" for all below permissions
+- `simplenpc.bind`
+  - Allows binding NPC commands via `bindnpc`
+- `simplenpc.unbind`
+  - Allows unbinding (deleting) NPC commands via `unbindnpc`
+- `simplenpc.interact`
+  - Allows interaction with SimpleNPCs' NPCs
