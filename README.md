@@ -4,6 +4,7 @@ Simple "NPC" interaction plugin for binding commands to entities
 ## Features
 
 - Simple, composable entity interactions via command binding
+- Anything that can be done via a command can be easily turned into an NPC interaction
 
 ## Config Overview
 ```yaml
