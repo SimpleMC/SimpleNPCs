@@ -19,6 +19,8 @@ group = "org.simplemc"
 version = scmVersion.version
 
 scmVersion {
+    versionIncrementer("incrementMinorIfNotOnRelease", mapOf("releaseBranchPattern" to "release/.+"))
+
     hooks(
         closureOf<HooksConfig> {
             // "normal" changelog update--changelog already contains a history
