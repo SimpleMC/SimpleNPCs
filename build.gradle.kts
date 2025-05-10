@@ -21,7 +21,7 @@ scmVersion {
         // FIXME - workaround for Kotlin DSL issue https://github.com/allegro/axion-release-plugin/issues/500
         val changelogPattern =
             "\\[Unreleased\\]([\\s\\S]+?)\\n" +
-                    "(?:^\\[Unreleased\\]: https:\\/\\/github\\.com\\/(\\S+\\/\\S+)\\/compare\\/[^\\n]*\$([\\s\\S]*))?\\z"
+                "(?:^\\[Unreleased\\]: https:\\/\\/github\\.com\\/(\\S+\\/\\S+)\\/compare\\/[^\\n]*\$([\\s\\S]*))?\\z"
         pre(
             "fileUpdate",
             mapOf(
