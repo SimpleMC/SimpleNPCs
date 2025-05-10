@@ -4,6 +4,8 @@ version: "${version}"
 api-version: "${apiVersion}"
 website: https://github.com/SimpleMC/SimpleNPCs
 author: tajobe
+libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}
 permissions:
   simplenpc.*:
     description: Wildcard permission
