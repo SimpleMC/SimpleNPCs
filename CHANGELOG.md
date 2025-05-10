@@ -1,12 +1,14 @@
 # Changelog
 
 ## [Unreleased]
+
 ### Changed
-- Update gradle to 7.4
-- Update to Spigot/MC 1.18
-- Update to Java 17
+- Merged template SimpleMC/mc-kotlin-plugin-template
+- MC 1.21, Kotlin 2.1, Gradle 8
+- Release tag prefix changed from `release-` to `v`
 
 ## [0.1.0] - 2020-02-16
+
 ### Added
 - Initial Release
 

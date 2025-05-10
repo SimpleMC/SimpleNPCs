@@ -109,7 +109,7 @@ class SimpleNPCs : JavaPlugin(), Listener {
             awaitingBinds.remove(sender)?.let { (_, command) ->
                 sender.sendMessage(
                     command?.let { "NPC binding of command `$it` timed out" }
-                        ?: "NPC unbinding timed out"
+                        ?: "NPC unbinding timed out",
                 )
             }
         }
